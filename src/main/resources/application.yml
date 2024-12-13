@@ -1,13 +1,23 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/moments
+    url: jdbc:postgresql://autorack.proxy.rlwy.net:27483/railway
     username: postgres
-    password: 1234
+    password: RubnRPVYuFrvGHEktmUUjRGfAIarBrRf
+
   jpa:
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    generate-ddl: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
 
+  server:
+    port: 8080
 
+  main:
+    allow-circular-references: true
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE

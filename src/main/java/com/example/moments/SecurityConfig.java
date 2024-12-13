@@ -26,7 +26,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/users/**").permitAll() // Открытый доступ для эндпоинтов пользователей
                         .requestMatchers("/api/posts/**").permitAll() // Доступ к постам только для аутентифицированных пользователей
                         .requestMatchers("/api/favorites/**").permitAll()
-                        .requestMatchers("/api/images/**").permitAll() // Доступ к изображениям открыт
+                        .requestMatchers("/api/images/**").permitAll()
+                        .requestMatchers("/hello").permitAll()
+                        // Доступ к изображениям открыт
 
                         .anyRequest().authenticated() // Остальные эндпоинты требуют аутентификации
                 );
